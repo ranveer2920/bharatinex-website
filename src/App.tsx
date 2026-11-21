@@ -27,6 +27,8 @@ import {
 } from "lucide-react";
 
 import PrivacyPolicy from "./PrivacyPolicy";
+import TermsAndConditions from "./TermsAndConditions";
+import CookiePolicy from "./CookiePolicy";
 
 const pillars = [
   {
@@ -146,10 +148,11 @@ function App() {
 
   const navItems = ["About", "Services", "Approach", "Contact"];
 
-  // Display the Privacy Policy as a separate page.
-  if (window.location.pathname === "/privacy-policy") {
-    return <PrivacyPolicy />;
-  }
+  // Display legal pages on their own URLs.
+  const currentPath = window.location.pathname.replace(/\/$/, "") || "/";
+  if (currentPath === "/privacy-policy") return <PrivacyPolicy />;
+  if (currentPath === "/terms-and-conditions") return <TermsAndConditions />;
+  if (currentPath === "/cookie-policy") return <CookiePolicy />;
 
   async function handleSubmit(event: FormEvent<HTMLFormElement>) {
     event.preventDefault();
@@ -1050,9 +1053,19 @@ function App() {
             CIN: U58200PN2026PTC262624
           </span>
 
-          <a href="/privacy-policy">
-            Privacy Policy
-          </a>
+          <div
+          className="footer-legal-links"
+  style={{
+    display: "flex",
+    alignItems: "center",
+    flexWrap: "wrap",
+    gap: "24px"
+  }}
+>
+  <a href="/privacy-policy">Privacy Policy</a>
+  <a href="/terms-and-conditions">Terms &amp; Conditions</a>
+  <a href="/cookie-policy">Cookie Policy</a>
+          </div>
 
           <span>
             Built for a digital future.

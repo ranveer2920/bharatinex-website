@@ -321,6 +321,11 @@ function App() {
                   <span>S. No. 98/2/7/9/10/2, FL. No. 201, First Line,<br/>Gadhinglaj, Kolhapur, Maharashtra, India – 416502</span>
                 </div>
 
+                <div className="contact-detail">
+                  <ShieldCheck size={18}/>
+                  <span>CIN: U58200PN2026PTC262624</span>
+                </div>
+
                 <a className="contact-detail" href="https://bharatinex.com" target="_blank" rel="noreferrer">
                   <Globe2 size={18}/><span>bharatinex.com</span><ExternalLink size={13}/>
                 </a>
@@ -417,6 +422,7 @@ function App() {
 
         <div className="section-wrap footer-bottom">
           <span>© {new Date().getFullYear()} Bharatinex Technologies Private Limited. All rights reserved.</span>
+          <span>CIN: U58200PN2026PTC262624</span>
           <span>Built for a digital future.</span>
         </div>
       </footer>
